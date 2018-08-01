@@ -5,12 +5,18 @@ const SideBar = (props) => {
     return (
         <div className='side-bar-container'>
             <label>Child count: {props.flexChildren ? props.flexChildren : 1}</label>
-            <input type="range" className='flex-children' name="flexChildren" min="1" max="8" onChange={(e) => props.changeHandler(e.target.name, e.target.value)} value={props.flexChildren}/>
-            <select name='color' onChange={(e) => props.inputChangeHandler(e.target.name, e.target.value)} value={props.color}>
-                <option value='#ff6a5c'>light</option>
-                <option value='rgb(121, 121, 121)'>dark</option>
-            </select>
-            {props.children}
+            <div className='range-container'>
+                <input type="range" className='flex-children slider' name="flexChildren" min="1" max="12" onChange={(e) => props.changeHandler(e.target.name, e.target.value)} value={props.flexChildren}/>
+            </div>
+            <div>
+                <select name='color' onChange={(e) => props.inputChangeHandler(e.target.name, e.target.value)} value={props.color}>
+                    <option value='#F5941C'>light</option>
+                    <option value='rgb(121, 121, 121)'>dark</option>
+                </select>
+            </div>
+            <div>
+                {props.children}
+            </div>
         </div>
     );
 };

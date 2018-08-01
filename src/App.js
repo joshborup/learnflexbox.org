@@ -3,20 +3,22 @@ import Sidebar from './components/sidebar';
 import FlexDirection from './components/FlexDirection';
 import FlexWrap from './components/FlexWrap';
 import JustifyContent from './components/JustifyContent';
-import AlignItems from './components/AlignItems'
+import AlignItems from './components/AlignItems';
+import AlignContent from './components/AlignContent'
 import './App.css';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      color:'#ff6a5c',
+      color:'#F5941C',
       childrenArray:[],
       flexChildren:0,
       flexDirection:'row',
       flexWrap:'nowrap',
       justifyContent:'flex-start',
-      alignItems: 'stretch'
+      alignItems: 'stretch',
+      alignContent:'stretch'
     }
   }
 
@@ -42,16 +44,17 @@ class App extends Component {
    
     let styles = {
       parent: {
-        background: 'red',
+        border: 'solid 5px #02173E',
         width: '100%',
         height: '545px',
-        maxWidth:'545px',
+        maxWidth:'700px',
         margin: '0 auto',
         display: 'flex',
         justifyContent: this.state.justifyContent,
         alignItems: this.state.alignItems,
         flexDirection: this.state.flexDirection,
-        flexWrap: this.state.flexWrap
+        flexWrap: this.state.flexWrap,
+        alignContent: this.state.alignContent
       },
       child: {
         background: this.state.color,
@@ -70,10 +73,9 @@ class App extends Component {
     }
 
     let divArray = this.state.childrenArray.map(div => {
-      return <div style={styles.child}>{div + 1}</div>
+      return <div key={div} style={styles.child}>{div + 1}</div>
     })
 
-    console.log(this.state.flexDirection)
     return (
       <div className="Main">
           <Sidebar flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
@@ -81,6 +83,7 @@ class App extends Component {
             <FlexWrap inputChangeHandler={this.inputChangeHandler} />
             <JustifyContent inputChangeHandler={this.inputChangeHandler} />
             <AlignItems inputChangeHandler={this.inputChangeHandler}/>
+            <AlignContent inputChangeHandler={this.inputChangeHandler}/>
           </Sidebar>
           <div>
             <div style={styles.parent}>

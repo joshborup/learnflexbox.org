@@ -1,39 +1,39 @@
 import React from 'react';
 
-const AlignItems = (props) => {
+const AlignContent = (props) => {
     return (
         <div className='flex-direction' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)}>
-                <label>Align Items</label>
+                <label>Align Content</label>
                 <div>
-                    <input type='radio' name='alignItems' defaultChecked value='stretch' />
+                    <input type='radio' name='alignContent' defaultChecked value='stretch' />
                     <label>Stretch (Default)</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignItems' value='center' />
+                    <input type='radio' name='alignContent' value='Center' />
                     <label>Center</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignItems' value='flex-start' />
+                    <input type='radio' name='alignContent' value='flex-start' />
                     <label>Flex-start</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignItems' value='flex-end' />
+                    <input type='radio' name='alignContent' value='flex-end' />
                     <label>Flex-end</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignItems' value='space-around' />
+                    <input type='radio' name='alignContent' value='space-around' />
                     <label>Space-around</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignItems' value='space-between' />
+                    <input type='radio' name='alignContent' value='space-between' />
                     <label>Space-between</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignItems' value='space-evenly' />
+                    <input type='radio' name='alignContent' value='space-evenly' />
                     <label>Space-evenly</label>
                 </div>
         </div>
     );
 };
 
-export default AlignItems;
+export default AlignContent;

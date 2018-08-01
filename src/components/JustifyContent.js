@@ -3,7 +3,7 @@ import React from 'react';
 const JustifyContent = (props) => {
     return (
         <div className='flex-direction' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)}>
-                <label>Flex Direction</label>
+                <label>Justify Content</label>
                 <div>
                     <input type='radio' name='justifyContent' defaultChecked value='flex-start' />
                     <label>Flex-start (Default)</label>
