@@ -4,21 +4,23 @@ import FlexDirection from './components/FlexDirection';
 import FlexWrap from './components/FlexWrap';
 import JustifyContent from './components/JustifyContent';
 import AlignItems from './components/AlignItems';
-import AlignContent from './components/AlignContent'
+import AlignContent from './components/AlignContent';
+import CssOutput from './components/CssOutput';
 import './App.css';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      color:'#F5941C',
+      color:'#FF9780',
       childrenArray:[],
       flexChildren:0,
       flexDirection:'row',
       flexWrap:'nowrap',
       justifyContent:'flex-start',
       alignItems: 'stretch',
-      alignContent:'stretch'
+      alignContent:'stretch',
+      toggle: false
     }
   }
 
@@ -40,6 +42,14 @@ class App extends Component {
     })
   }
 
+  myToggle = () => {
+    this.setState((prevState)=>{
+        return{
+          toggle: !prevState.toggle
+        }
+    })
+  }
+
   render() {
    
     let styles = {
@@ -50,6 +60,7 @@ class App extends Component {
         maxWidth:'700px',
         margin: '0 auto',
         display: 'flex',
+        borderRadius:'3px',
         justifyContent: this.state.justifyContent,
         alignItems: this.state.alignItems,
         flexDirection: this.state.flexDirection,
@@ -68,7 +79,7 @@ class App extends Component {
         color: 'white',
         textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
         borderRadius: '2px',
-        margin: '10px'
+        margin: '0px'
       }
     }
 
@@ -78,7 +89,7 @@ class App extends Component {
 
     return (
       <div className="Main">
-          <Sidebar flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
+          <Sidebar myToggle={this.myToggle} toggle={this.state.toggle} flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
             <FlexDirection inputChangeHandler={this.inputChangeHandler}/>
             <FlexWrap inputChangeHandler={this.inputChangeHandler} />
             <JustifyContent inputChangeHandler={this.inputChangeHandler} />
@@ -90,6 +101,14 @@ class App extends Component {
               {this.state.flexChildren ? divArray : <div style={styles.child}>1</div>}
             </div>
           </div>
+          <CssOutput
+          justifyContent={this.state.justifyContent}
+          alignItems={this.state.alignItems}
+          flexDirection={this.state.flexDirection}
+          flexWrap={this.state.flexWrap}
+          alignContent={this.state.alignContent}
+          toggle={this.state.toggle}
+          />
       </div>
     );
   }

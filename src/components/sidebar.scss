@@ -1,12 +1,55 @@
 .side-bar-container {
     max-height: 100vh;
+    position: relative;
+    z-index: 2;
     width: 300px;
     padding: 20px;
-    background: #b48153;
+    background: rgb(128, 122, 122);
     display: flex;
     flex-direction: column;
+    // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.377);
     align-items: flex-start;
     overflow: scroll;
+
+    .output-button {
+        height: 40px;
+        margin: 10px 0 20px;
+        
+
+        button {
+            height: 100%;
+            width: 100%;
+            font-size: 20px;
+            cursor: pointer;
+            background: #FF9780;
+            color: white;
+            transition: .08s;
+            border: none;
+            border-radius: 2px;
+            text-shadow: .5px .5px 1.5px rgb(70,70,50);
+            box-shadow: 0 5px 0px rgb(207, 100, 75);
+        }
+
+        button:active {
+            margin-top: 4px;
+            box-shadow: 0 1px 0px rgb(207, 100, 75);
+        }
+
+        button:focus{
+            outline: none;
+        }
+
+        .hide {
+            background: #5275CC;
+            box-shadow: 0 5px 0px rgb(46, 71, 136);
+
+        }
+
+        .hide:active {
+            margin-top: 4px;
+            box-shadow: 0 1px 0px rgb(46, 71, 136);
+        }
+    }
 
     input[type=radio]{
         width: 16px;
@@ -40,11 +83,11 @@
           }
           input[type=range].slider::-webkit-slider-thumb {
             box-shadow: 1px 1px 1px #0000009a, 0px 0px 1px #0d0d0daf;
-            border: 1px solid #000000;
+            border: 1px solid rgb(155, 92, 77);
             height: 20px;
             width: 24px;
             border-radius: 2px;
-            background: #F5941C;
+            background: #FF9780;
             cursor: pointer;
             -webkit-appearance: none;
             margin-top: -6px;
@@ -56,14 +99,14 @@
             width: 100%;
             height: 8.4px;
             cursor: pointer;
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+            box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
             background: #e8c490;
             border-radius: 1.3px;
             border: 0.2px solid #010101;
           }
           input[type=range].slider::-moz-range-thumb {
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-            border: 1px solid #000000;
+            box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
+            border: 1px solid rgb(155, 92, 77);
             height: 20px;
             width: 24px;
             border-radius: 2px;
@@ -82,17 +125,17 @@
             background: #e4bb7f;
             border: 0.2px solid #010101;
             border-radius: 2.6px;
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+            box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
           }
           input[type=range].slider::-ms-fill-upper {
             background: #e8c490;
             border: 0.2px solid #010101;
             border-radius: 2.6px;
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+            box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
           }
           input[type=range].slider::-ms-thumb {
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-            border: 1px solid #000000;
+            box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
+            border: 1px solid rgb(155, 92, 77);
             height: 20px;
             width: 24px;
             border-radius: 2px;
@@ -118,7 +161,7 @@
     >label {
 
         color: white;
-        text-shadow: 1.5px 1.5px 3px rgb(70,70,50);
+        text-shadow: .5px .5px 1.5px rgb(70,70,50);
         
     }
     .flex-children {
@@ -131,13 +174,17 @@
         display: flex;
         flex-direction: column;
         color: white;
-        text-shadow: 1px 1px 1px black;
+        text-shadow: .5px .5px 1.5px rgb(70,70,50);
+        
         padding: 10px 0px;
         width: 100%;
         >label {
             margin-bottom: 5px;
             width: 100%;
             border-bottom: white solid 1px;
+            text-align: center;
+            font-size: 20px;
+            text-shadow: 1.5px 1.5px 2.5px rgb(70,70,50);
         }
     }
 }
