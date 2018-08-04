@@ -13,7 +13,7 @@ const SideBar = (props) => {
             </div>
             <div>
                 <select name='color' onChange={(e) => props.inputChangeHandler(e.target.name, e.target.value)} value={props.color}>
-                    <option value='#FF9780'>light</option>
+                    <option value='rgb(128, 163, 252)'>light</option>
                     <option value='rgb(121, 121, 121)'>dark</option>
                 </select>
             </div>

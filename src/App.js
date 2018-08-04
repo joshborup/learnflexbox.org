@@ -6,13 +6,14 @@ import JustifyContent from './components/JustifyContent';
 import AlignItems from './components/AlignItems';
 import AlignContent from './components/AlignContent';
 import CssOutput from './components/CssOutput';
+import Child from './components/Child';
 import './App.css';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      color:'#FF9780',
+      color:'rgb(128, 163, 252)',
       childrenArray:[],
       flexChildren:0,
       flexDirection:'row',
@@ -20,6 +21,7 @@ class App extends Component {
       justifyContent:'flex-start',
       alignItems: 'stretch',
       alignContent:'stretch',
+      childFlex: 0,
       toggle: false
     }
   }
@@ -50,6 +52,27 @@ class App extends Component {
     })
   }
 
+  formattedChild = (div) => {
+  
+     return {
+          background: this.state.color,
+          minWidth:'100px',
+          minHeight:"100px",
+          boxShadow: '1px 3px 10px rgba(21, 21, 21, .7)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '80px',
+          color: 'white',
+          textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
+          borderRadius: '2px',
+          margin: '0px',
+          flex: this.state[`div-${div + 1}`]
+        }
+    
+    }
+  
+
   render() {
    
     let styles = {
@@ -68,6 +91,21 @@ class App extends Component {
         alignContent: this.state.alignContent
       },
       child: {
+          background: this.state.color,
+          minWidth:'100px',
+          minHeight:"100px",
+          boxShadow: '1px 3px 10px rgba(21, 21, 21, .7)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '80px',
+          color: 'white',
+          textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
+          borderRadius: '2px',
+          margin: '0px',
+          flex: this.state['div-1']
+        },
+      childSelected: {
         background: this.state.color,
         minWidth:'100px',
         minHeight:"100px",
@@ -79,14 +117,26 @@ class App extends Component {
         color: 'white',
         textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
         borderRadius: '2px',
-        margin: '0px'
+        margin: '0px',
+        
       }
     }
 
-    let divArray = this.state.childrenArray.map(div => {
-      return <div key={div} style={styles.child}>{div + 1}</div>
-    })
+    let divInputs = this.state.childrenArray.map(div => {
 
+     
+         return <div>{div + 1}: <input onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
+   })
+
+    let divArray = this.state.childrenArray.map(div => {
+      
+      //  if(this.state[`div-${div + 1}`]){
+          return <div key={div} style={this.formattedChild(div)}>{div + 1}</div>
+      //  } else {
+      //     return <div key={div} style={styles.child}>{div + 1}</div>
+      //  }
+    })
+      console.log(this.state)
     return (
       <div className="Main">
           <Sidebar myToggle={this.myToggle} toggle={this.state.toggle} flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
@@ -95,6 +145,8 @@ class App extends Component {
             <JustifyContent inputChangeHandler={this.inputChangeHandler} />
             <AlignItems inputChangeHandler={this.inputChangeHandler}/>
             <AlignContent inputChangeHandler={this.inputChangeHandler}/>
+            <Child divInputs={divInputs} inputChangeHandler={this.inputChangeHandler} />
+            
           </Sidebar>
           <div>
             <div style={styles.parent}>
