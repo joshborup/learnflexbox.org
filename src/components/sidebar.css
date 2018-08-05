@@ -17,13 +17,13 @@
       width: 100%;
       font-size: 20px;
       cursor: pointer;
-      background: #FF9780;
+      background: #80a3fc;
       color: white;
       transition: .08s;
       border: none;
       border-radius: 2px;
       text-shadow: 0.5px 0.5px 1.5px #464632;
-      box-shadow: 0 5px 0px #cf644b; }
+      box-shadow: 0 5px 0px #4f68a7; }
     .side-bar-container .output-button button:active {
       margin-top: 4px;
       box-shadow: 0 1px 0px #cf644b; }
@@ -62,7 +62,7 @@
       height: 20px;
       width: 24px;
       border-radius: 2px;
-      background: #FF9780;
+      background: #80a3fc;
       cursor: pointer;
       -webkit-appearance: none;
       margin-top: -6px; }
@@ -138,3 +138,44 @@
       text-align: center;
       font-size: 20px;
       text-shadow: 1.5px 1.5px 2.5px #464632; }
+  .side-bar-container .child-input-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: center;
+    width: 100%; }
+    .side-bar-container .child-input-container h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 5px; }
+  .side-bar-container .child-input-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .side-bar-container .child-input-container > div .for-margin {
+      padding-top: 10px;
+      align-items: flex-start !important; }
+    .side-bar-container .child-input-container > div .child-flex-options {
+      display: flex;
+      align-items: center; }
+      .side-bar-container .child-input-container > div .child-flex-options p {
+        margin: 0 5px 0 0; }
+      .side-bar-container .child-input-container > div .child-flex-options input {
+        flex: 3;
+        height: 30px;
+        border-radius: 3px;
+        border: none;
+        font-size: 16px;
+        padding-left: 5px; }
+      .side-bar-container .child-input-container > div .child-flex-options input:focus {
+        outline: none; }
+      .side-bar-container .child-input-container > div .child-flex-options .child-option-margin {
+        display: flex;
+        flex-direction: column; }
+        .side-bar-container .child-input-container > div .child-flex-options .child-option-margin input {
+          max-width: 80px;
+          margin: 10px 0; }
+  .side-bar-container .child-input-container > div:first-child {
+    margin: 0 0 10px 0; }
+  .side-bar-container .child-input-container > * + * {
+    margin: 10px 0; }

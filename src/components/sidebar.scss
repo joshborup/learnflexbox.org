@@ -21,13 +21,13 @@
             width: 100%;
             font-size: 20px;
             cursor: pointer;
-            background: #FF9780;
+            background: rgb(128, 163, 252);
             color: white;
             transition: .08s;
             border: none;
             border-radius: 2px;
             text-shadow: .5px .5px 1.5px rgb(70,70,50);
-            box-shadow: 0 5px 0px rgb(207, 100, 75);
+            box-shadow: 0 5px 0px rgb(79, 104, 167);
         }
 
         button:active {
@@ -87,7 +87,7 @@
             height: 20px;
             width: 24px;
             border-radius: 2px;
-            background: #FF9780;
+            background: rgb(128, 163, 252);
             cursor: pointer;
             -webkit-appearance: none;
             margin-top: -6px;
@@ -187,4 +187,71 @@
             text-shadow: 1.5px 1.5px 2.5px rgb(70,70,50);
         }
     }
+    .child-input-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        justify-content: center;
+        width: 100%;
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .child-input-container > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .for-margin {
+            padding-top: 10px;
+            align-items: flex-start!important;
+        }
+
+
+        .child-flex-options {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin: 0 5px 0 0;
+            }
+            input {
+                flex: 3;
+                height: 30px;
+                border-radius: 3px;
+                border: none;
+                font-size: 16px;
+                padding-left: 5px;
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+            
+
+            .child-option-margin{
+                display: flex;
+                flex-direction: column;
+                input {
+                   max-width: 80px;
+                   margin: 10px 0;
+                }
+            }
+        }
+    }
+
+    .child-input-container > div:first-child {
+        margin:0 0 10px 0;
+    }
+    .child-input-container > * + * {
+        margin: 10px 0;
+    }
+
+    
 }
+

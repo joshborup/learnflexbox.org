@@ -66,7 +66,10 @@ class App extends Component {
           color: 'white',
           textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
           borderRadius: '2px',
-          margin: '0px',
+          marginTop: this.state[`div-${div + 1}-margin-top`] ? this.state[`div-${div + 1}-margin-top`] + 'px' : 0,
+          marginRight: this.state[`div-${div + 1}-margin-right`] ? this.state[`div-${div + 1}-margin-right`] + 'px' : 0,
+          marginBottom: this.state[`div-${div + 1}-margin-bottom`] ? this.state[`div-${div + 1}-margin-bottom`] + 'px' : 0,
+          marginLeft: this.state[`div-${div + 1}-margin-left`] ? this.state[`div-${div + 1}-margin-left`] + 'px' : 0,
           flex: this.state[`div-${div + 1}`]
         }
     
@@ -123,20 +126,29 @@ class App extends Component {
     }
 
     let divInputs = this.state.childrenArray.map(div => {
+         return <div>
+                  <h2>child {div + 1}</h2>
+                  <div className='child-flex-options'>
+                    <p>Flex:</p>
+                    <input type='number' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/>
+                  </div>
 
-     
-         return <div>{div + 1}: <input onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
+                  <div className='child-flex-options for-margin'>
+                    <p>margin:</p>
+                    <div className='child-option-margin'>
+                      <input type='number' placeholder='Top' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-top`} value={this.state[`div-${div + 1}-margin-top`]}/>
+                      <input type='number' placeholder='right' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-right`} value={this.state[`div-${div + 1}-margin-right`]}/>
+                      <input type='number' placeholder='bottom' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-bottom`} value={this.state[`div-${div + 1}-margin-bottom`]}/>
+                      <input type='number' placeholder='left' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-left`} value={this.state[`div-${div + 1}-margin-left`]}/>
+                    </div>
+                  </div>
+                </div>
    })
 
     let divArray = this.state.childrenArray.map(div => {
-      
-      //  if(this.state[`div-${div + 1}`]){
           return <div key={div} style={this.formattedChild(div)}>{div + 1}</div>
-      //  } else {
-      //     return <div key={div} style={styles.child}>{div + 1}</div>
-      //  }
     })
-      console.log(this.state)
+
     return (
       <div className="Main">
           <Sidebar myToggle={this.myToggle} toggle={this.state.toggle} flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
