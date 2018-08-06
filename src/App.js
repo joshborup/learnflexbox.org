@@ -23,10 +23,6 @@ class App extends Component {
       justifyContent:'flex-start',
       alignItems: 'stretch',
       alignContent:'stretch',
-      'div-1-margin-top':0,
-      'div-1-margin-right':0,
-      'div-1-margin-left':0,
-      'div-1-margin-bottom':0,
       childFlex: 0,
       toggle: false,
     }
@@ -142,27 +138,42 @@ class App extends Component {
     }
 
     let divInputs = this.state.childrenArray.map(div => {
-         return <div>
+         return <div className='child-container'>
                   <h2>child {div + 1}</h2>
                   <div className='child-flex-options'>
-                    <p>Flex:</p>
-                    <input type='number' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/>
+                    <h3>Flex:</h3>
+                    <div>Flex: <input type='number' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
                   </div>
 
                   <div className='child-flex-options for-margin'>
-                    <label>margin:</label>
+                    <h3>margin:</h3>
                     <div className='child-option-margin'>
-                      <input type='number' placeholder='Top' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-top`} value={this.state[`div-${div + 1}-margin-top`]}/>
+                      <div>
+                        <label>Top: </label>
+                        <input type='number' placeholder='Top' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-top`} value={this.state[`div-${div + 1}-margin-top`]}/>
+                      </div>
+                      <div>
+                        <label>Right: </label>
                       <input type='number' placeholder='right' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-right`} value={this.state[`div-${div + 1}-margin-right`]}/>
-                      <input type='number' placeholder='bottom' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-bottom`} value={this.state[`div-${div + 1}-margin-bottom`]}/>
+                      </div>
+                      <div>
+                        <label>Bottom: </label>
+                        <input type='number' placeholder='bottom' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-bottom`} value={this.state[`div-${div + 1}-margin-bottom`]}/>
+                      </div>
+                      <div>
+                        <label>Left: </label>
                       <input type='number' placeholder='left' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-left`} value={this.state[`div-${div + 1}-margin-left`]}/>
+                      </div>
                     </div>
                   </div>
                 </div>
    })
 
     let divArray = this.state.childrenArray.map(div => {
-          return <div key={div} style={this.formattedChild(div)}>{div + 1}</div>
+          return <div key={div} className='generated-div' style={this.formattedChild(div)}>
+          <div className='child-title'>child</div>
+          {div + 1}
+          </div>
     })
 
     const defaultOptions = {

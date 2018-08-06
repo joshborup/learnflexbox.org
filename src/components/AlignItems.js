@@ -3,7 +3,11 @@ import React from 'react';
 const AlignItems = (props) => {
     return (
         <div className='flex-direction' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)}>
-                <label>Align Items</label>
+               
+                <details>
+                    <summary>Align Items</summary>
+                    <p>Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.</p>
+                </details>
                 <div>
                     <input type='radio' name='alignItems' defaultChecked value='stretch' />
                     <label>Stretch (Default)</label>

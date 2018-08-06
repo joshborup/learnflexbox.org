@@ -3,7 +3,10 @@ import React from 'react';
 const AlignContent = (props) => {
     return (
         <div className='flex-direction' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)}>
-                <label>Align Content</label>
+                <details>
+                    <summary>Align Content</summary>
+                    <p>Defines how each line is aligned within a flexbox container. It only applies if flex-wrap: wrap is present, and if there are multiple lines of flexbox items.</p>
+                </details>
                 <div>
                     <input type='radio' name='alignContent' defaultChecked value='stretch' />
                     <label>Stretch (Default)</label>

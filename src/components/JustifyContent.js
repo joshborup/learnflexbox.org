@@ -3,7 +3,10 @@ import React from 'react';
 const JustifyContent = (props) => {
     return (
         <div className='flex-direction' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)}>
-                <label>Justify Content</label>
+                <details>
+                    <summary>Justify Content</summary>
+                    <p>Defines how flexbox items are aligned according to the main axis, within a flexbox container.</p>
+                </details>
                 <div>
                     <input type='radio' name='justifyContent' defaultChecked value='flex-start' />
                     <label>Flex-start (Default)</label>
