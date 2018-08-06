@@ -2,11 +2,22 @@
     display: flex;
     align-items: center;
     width: 100%;
-    overflow: hidden;
     position: relative;
+    
+    >h1 {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        left: 0;
+        width: 300px;
+        margin: 0 auto;
+        font-size: 40px;
+        z-index: 0;
+        color: #5c5b5b;
+    }
 
     >div:nth-child(2) {
-        background: rgb(255, 255, 255);
+        background: rgb(243, 243, 243);
         width: 100%;
         height: 100vh;
         padding: 30px;
@@ -21,15 +32,15 @@
         height: 175px;
         width: 300px;
         position: absolute;
-        top: 0;
+        top: 15px;
         font-size: 17px;
-        left: 272px;
+        left: 315px;
         border-radius: 8px;
         background: #faf1e4;
         color: rgb(80, 80, 80);
         transition: .3s;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.377);
-        z-index: 0;
+        z-index: 3;
         border: black solid 1px;
         
      
@@ -45,5 +56,63 @@
 
     pre {
         margin: 0 auto;
+        
+    }
+    .child-css {
+        top: 200px;
+    }
+}
+
+.attribution {
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    color: #8f8f8f;
+    max-height: 85px;
+    height: 85px;
+    max-width: 280px;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+
+    a {
+        color: #8f8f8f;
+        width: 100%;
+    }
+
+    a:hover {
+        color: #5c5b5b;
+        }
+
+    .made-with{
+        margin-right: 40px;
+    }
+
+    h3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       
+
+    }
+
+    >div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+
+        >div {
+        position: absolute;
+        right: 120px;
+        }
     }
 }

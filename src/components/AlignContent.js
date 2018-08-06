@@ -9,7 +9,7 @@ const AlignContent = (props) => {
                     <label>Stretch (Default)</label>
                 </div>
                 <div>
-                    <input type='radio' name='alignContent' value='Center' />
+                    <input type='radio' name='alignContent' value='center' />
                     <label>Center</label>
                 </div>
                 <div>

@@ -13,7 +13,7 @@ const JustifyContent = (props) => {
                     <label>Flex-end</label>
                 </div>
                 <div>
-                    <input type='radio' name='justifyContent' value='Center' />
+                    <input type='radio' name='justifyContent' value='center' />
                     <label>Center</label>
                 </div>
                 <div>
