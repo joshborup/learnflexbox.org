@@ -2,6 +2,7 @@ import React from 'react';
 import './sidebar.css'
 
 const SideBar = (props) => {
+    console.log(props.color)
     return (
         <div className='side-bar-container'>
             <label>Child count: {props.flexChildren ? props.flexChildren : 1}</label>
@@ -9,13 +10,16 @@ const SideBar = (props) => {
                 <input type="range" className='flex-children slider' name="flexChildren" min="1" max="12" onChange={(e) => props.changeHandler(e.target.name, e.target.value)} value={props.flexChildren}/>
             </div>
             <div className='output-button'>
-                {props.toggle ? <button className='hide' onClick={props.myToggle}>hide css output</button> : <button onClick={props.myToggle}>get css output</button>}
+                <div>
+                    {props.toggle ? <button className='hide' onClick={props.myToggle}>hide css output</button> : <button onClick={props.myToggle}>get css output</button>}
+                </div>
+                <div>
+                    <button onClick={props.reset}>Reset</button>
+                </div>
             </div>
-            <div>
-                <select name='color' onChange={(e) => props.inputChangeHandler(e.target.name, e.target.value)} value={props.color}>
-                    <option value='rgb(128, 163, 252)'>light</option>
-                    <option value='rgb(121, 121, 121)'>dark</option>
-                </select>
+            <div className='color-container'>
+                <label>Color: </label> 
+                <input className='color' type='color' name='color' onChange={(e) => props.inputChangeHandler(e.target.name, e.target.value)} value={props.color} />    
             </div>
             <div>
                 {props.children}

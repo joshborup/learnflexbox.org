@@ -13,7 +13,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      color:'rgb(128, 163, 252)',
+      color:'#89a5f0',
       childrenArray:[],
       flexChildren:0,
       flexDirection:'row',
@@ -22,7 +22,7 @@ class App extends Component {
       alignItems: 'stretch',
       alignContent:'stretch',
       childFlex: 0,
-      toggle: false
+      toggle: false,
     }
   }
 
@@ -36,6 +36,10 @@ class App extends Component {
       childrenArray:childArray,
       [name]: value
     })
+  }
+
+  reset = () => {
+    window.location.href = '/'
   }
 
   inputChangeHandler = (name, value) => {
@@ -134,7 +138,7 @@ class App extends Component {
                   </div>
 
                   <div className='child-flex-options for-margin'>
-                    <p>margin:</p>
+                    <label>margin:</label>
                     <div className='child-option-margin'>
                       <input type='number' placeholder='Top' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-top`} value={this.state[`div-${div + 1}-margin-top`]}/>
                       <input type='number' placeholder='right' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-right`} value={this.state[`div-${div + 1}-margin-right`]}/>
@@ -149,9 +153,10 @@ class App extends Component {
           return <div key={div} style={this.formattedChild(div)}>{div + 1}</div>
     })
 
+    console.log(this.state.initialState)
     return (
       <div className="Main">
-          <Sidebar myToggle={this.myToggle} toggle={this.state.toggle} flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
+          <Sidebar color={this.state.color} reset={this.reset} myToggle={this.myToggle} toggle={this.state.toggle} flexChildren={this.state.flexChildren} changeHandler={this.changeHandler} inputChangeHandler={this.inputChangeHandler}>
             <FlexDirection inputChangeHandler={this.inputChangeHandler}/>
             <FlexWrap inputChangeHandler={this.inputChangeHandler} />
             <JustifyContent inputChangeHandler={this.inputChangeHandler} />

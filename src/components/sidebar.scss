@@ -12,13 +12,19 @@
     overflow: scroll;
 
     .output-button {
-        height: 40px;
-        margin: 10px 0 20px;
+        max-height: 110px;
+        margin: 0px 0 30px;
         
+        >div {
+            max-height: 45px;
+            margin: 10px 0 0;
+        
+        }
 
         button {
-            height: 100%;
+            height: 40px;
             width: 100%;
+            margin-top: 10px;
             font-size: 20px;
             cursor: pointer;
             background: rgb(128, 163, 252);
@@ -31,9 +37,11 @@
         }
 
         button:active {
-            margin-top: 4px;
-            box-shadow: 0 1px 0px rgb(207, 100, 75);
+            margin-top: 11px;
+            box-shadow: 0 1px 0px rgb(115, 75, 207);
         }
+
+        
 
         button:focus{
             outline: none;
@@ -46,7 +54,7 @@
         }
 
         .hide:active {
-            margin-top: 4px;
+            margin-top: 11px;
             box-shadow: 0 1px 0px rgb(46, 71, 136);
         }
     }
@@ -83,7 +91,7 @@
           }
           input[type=range].slider::-webkit-slider-thumb {
             box-shadow: 1px 1px 1px #0000009a, 0px 0px 1px #0d0d0daf;
-            border: 1px solid rgb(155, 92, 77);
+            border: 1px solid rgb(33, 98, 151);
             height: 20px;
             width: 24px;
             border-radius: 2px;
@@ -106,7 +114,7 @@
           }
           input[type=range].slider::-moz-range-thumb {
             box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
-            border: 1px solid rgb(155, 92, 77);
+            border: 1px solid rgb(33, 98, 151);
             height: 20px;
             width: 24px;
             border-radius: 2px;
@@ -135,7 +143,7 @@
           }
           input[type=range].slider::-ms-thumb {
             box-shadow: 1px 1px 1px rgb(155, 92, 77), 0px 0px 1px #0d0d0d;
-            border: 1px solid rgb(155, 92, 77);
+            border: 1px solid rgb(33, 98, 151);
             height: 20px;
             width: 24px;
             border-radius: 2px;
@@ -152,11 +160,25 @@
           
     }
 
-    select{
-        width: 100%;
-        height: 30px;
-        font-size: 16px;
+    .color-container{
+
+        .color{
+            width: 100%;
+            height: 30px;
+            font-size: 16px;
+            color: white;
+            border: none;
+        }
+
+        label {
+
+            color: white;
+            text-shadow: .5px .5px 1.5px rgb(70,70,50);
+            
+        }
+
     }
+
 
     >label {
 
@@ -196,7 +218,7 @@
 
         h2 {
             text-align: center;
-            font-size: 18px;
+            font-size: 22px;
             margin-bottom: 5px;
         }
     }
@@ -209,6 +231,11 @@
         .for-margin {
             padding-top: 10px;
             align-items: flex-start!important;
+
+            label {
+                flex: 1;
+                margin-top: 6px;
+            }
         }
 
 
@@ -237,6 +264,7 @@
             .child-option-margin{
                 display: flex;
                 flex-direction: column;
+                flex: 2;
                 input {
                    max-width: 80px;
                    margin: 10px 0;
