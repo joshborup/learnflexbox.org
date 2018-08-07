@@ -139,7 +139,7 @@ class App extends Component {
     }
 
     let divInputs = this.state.childrenArray.map(div => {
-         return <div className='child-container'>
+         return <div key={div} className='child-container'>
                   <h2>child {div + 1}</h2>
                   <div className='child-flex-options'>
                     <h3>Flex:</h3>
@@ -190,7 +190,6 @@ class App extends Component {
       margin: 0
     }
 
-    console.log(this.state.initialState)
     return (
       <div className="Main">
          
@@ -200,7 +199,7 @@ class App extends Component {
             <JustifyContent inputChangeHandler={this.inputChangeHandler} />
             <AlignItems inputChangeHandler={this.inputChangeHandler}/>
             <AlignContent inputChangeHandler={this.inputChangeHandler}/>
-            <Child divInputs={divInputs} inputChangeHandler={this.inputChangeHandler} />
+            <Child div1={this.state['div-1']} divInputs={divInputs} inputChangeHandler={this.inputChangeHandler} />
             
           </Sidebar>
           <div>

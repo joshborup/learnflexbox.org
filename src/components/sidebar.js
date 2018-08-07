@@ -2,7 +2,6 @@ import React from 'react';
 import './sidebar.css'
 
 const SideBar = (props) => {
-    console.log(props.color)
     return (
         <div className='side-bar-container'>
             <label>Child count: {props.flexChildren ? props.flexChildren : 1}</label>

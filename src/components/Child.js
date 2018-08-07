@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ChildFlex = (props) => {
-    console.log(props.divInputs)
     return (
         <div className='flex-direction'>
                 <label>Child Options</label>
@@ -15,7 +14,7 @@ const ChildFlex = (props) => {
                             <h2>child 1</h2>
                             <div className='child-flex-options'>
                                 <p>Flex:</p>
-                                <input type='number' placeholder='example: 1' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)} name={`div-1`}/>
+                                <input type='number' placeholder='example: 1' onChange={(e)=>props.inputChangeHandler(e.target.name, e.target.value)} value={props.div1} name={`div-1`}/>
                             </div>
                             <div className='child-flex-options for-margin'>
                                 <label>margin:</label>
