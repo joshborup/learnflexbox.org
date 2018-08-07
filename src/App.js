@@ -16,7 +16,7 @@ class App extends Component {
     super()
     this.state = {
       color:'#89a5f0',
-      childrenArray:[],
+      childrenArray:[0],
       flexChildren:0,
       flexDirection:'row',
       flexWrap:'nowrap',
@@ -89,12 +89,13 @@ class App extends Component {
       parent: {
         border: 'solid 5px #02173E',
         width: '100%',
-        height: '545px',
+        height: '500px',
         maxWidth:'700px',
         minWidth: '500px',
         margin: '0 auto',
         display: 'flex',
         borderRadius:'3px',
+        position:'relative',
         justifyContent: this.state.justifyContent,
         alignItems: this.state.alignItems,
         flexDirection: this.state.flexDirection,
@@ -204,10 +205,12 @@ class App extends Component {
           </Sidebar>
           <div>
             <div style={styles.parent}>
-              {this.state.flexChildren ? divArray : <div style={styles.child}>1</div>}
+            <h2 className='parent-classname'>Parent</h2>
+              {this.state.flexChildren ? divArray : <div className='generated-div' style={styles.child}><div className='child-title'>child</div>1</div>}
             </div>
           </div>
           <CssOutput
+          count={this.state.childrenArray}
           justifyContent={this.state.justifyContent}
           alignItems={this.state.alignItems}
           flexDirection={this.state.flexDirection}
@@ -224,7 +227,7 @@ class App extends Component {
           <h3>&nbsp;<a href='https://www.joshborup.com'>Josh&nbsp;Borup</a> </h3>
           </div>
         </div>
-        <h1>Learn Flex Box</h1>
+        <h1>Learn Flexbox</h1>
       </div>
     );
   }

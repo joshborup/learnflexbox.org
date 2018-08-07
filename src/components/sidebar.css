@@ -1,5 +1,6 @@
 .side-bar-container {
   max-height: 100vh;
+  height: 100%;
   position: relative;
   z-index: 4;
   width: 300px;
@@ -156,6 +157,7 @@
       text-shadow: 0.5px 0.5px 1.5px #464632;
       margin-right: 8px; }
   .side-bar-container > label {
+    font-size: 20px;
     color: white;
     text-shadow: 0.5px 0.5px 1.5px #464632; }
   .side-bar-container .flex-children {

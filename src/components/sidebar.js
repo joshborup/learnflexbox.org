@@ -11,7 +11,7 @@ const SideBar = (props) => {
             </div>
             <div className='output-button'>
                 <div>
-                    {props.toggle ? <button className='hide' onClick={props.myToggle}>hide css output</button> : <button onClick={props.myToggle}>get css output</button>}
+                    {props.toggle ? <button className='hide' onClick={props.myToggle}>hide code output</button> : <button onClick={props.myToggle}>get code output</button>}
                 </div>
                 <div>
                     <button onClick={props.reset}>Reset</button>

@@ -1,5 +1,6 @@
 .side-bar-container {
     max-height: 100vh;
+    height: 100%;
     position: relative;
     z-index: 4;
     width: 300px;
@@ -214,7 +215,7 @@
 
 
     >label {
-
+        font-size: 20px;
         color: white;
         text-shadow: .5px .5px 1.5px rgb(70,70,50);
         
