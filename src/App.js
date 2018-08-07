@@ -221,7 +221,8 @@ class App extends Component {
           <div className='attribution'>
           <div>
             <h3> Made with </h3>
-           <h3 className='made-with'>&lt;3</h3>
+           <h3 className='made-with'>
+           <div>&lt;</div><div>3</div></h3>
           <h3>by</h3>
           <h3>&nbsp;<a href='https://www.joshborup.com'>Josh&nbsp;Borup</a> </h3>
           </div>

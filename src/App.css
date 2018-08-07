@@ -99,11 +99,16 @@
   .attribution a:hover {
     color: #5c5b5b; }
   .attribution .made-with {
-    font-size: 20px;
+    font-size: 27px;
     letter-spacing: -4px;
     transform: rotate(270deg);
-    margin: 0 2px;
+    margin: 0 8px 0 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .attribution .made-with > div:first-child {
+      font-size: 22px;
+      transform: scale(1, 1.5); }
+    .attribution .made-with > div:last-child {
+      transform: translate(0, 1px); }
   .attribution h3 {
     display: flex;
     flex-direction: row;
