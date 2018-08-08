@@ -62,6 +62,8 @@
 
     .css-output-container {
         min-height: 185px;
+        max-height: 80vh;
+        overflow: scroll;
         width: 300px;
         position: absolute;
         top: 265px;

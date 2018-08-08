@@ -4,8 +4,17 @@ const CssOutput = (props) => {
     let divArray = props.count ? props.count.map(div => {
         return `      <div>Child ${div + 1}</div> 
         `}).join('') : '';
+   
+    let childCss = props.count ? props.count.map(div => {
+        return `.child-${div+1} {
+            flex: ${+props['div-' + (+ div + 1)] || 0};
+            order: ${+props['div-' + (+ div + 1) + '-order'] || 0};
+            align-self: ${props['div-' + (+ div + 1) + '-align-self'] || 'stretch'};
+        }
+        `}).join('') : '';
     
     let toggledClass = props.toggle ? 'css-output-container slide-in' : 'css-output-container slide-out';
+    console.log(props)
     return (
         <div >
 
@@ -19,16 +28,14 @@ const CssOutput = (props) => {
             align-items: ${props.alignItems};
             align-content: ${props.alignContent};
         }
+
+       ${childCss}
                 `
-            }</pre>
+            }
+            </pre>
 
         
-        <pre className={toggledClass}><h1>HTML</h1>{
-                `
-        <div class='Parent'>
-        ${divArray}</div>
-                `
-            }</pre>
+      
         </div>
     );
 };

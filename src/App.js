@@ -209,12 +209,7 @@ class App extends Component {
           </div>
           <CssOutput
           count={this.state.childrenArray}
-          justifyContent={this.state.justifyContent}
-          alignItems={this.state.alignItems}
-          flexDirection={this.state.flexDirection}
-          flexWrap={this.state.flexWrap}
-          alignContent={this.state.alignContent}
-          toggle={this.state.toggle}
+          {...this.state}
           />
 
           <div className='attribution'>
