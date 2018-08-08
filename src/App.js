@@ -149,7 +149,7 @@ class App extends Component {
                     <div>Flex: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
                   </div>
 
-                  <div className='child-flex-options'>
+                  <div className='child-flex-options order'>
                     <h3>Order:</h3>
                     <div>Order: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-order`} value={this.state[`div-${div + 1}-order`]}/></div>
                   </div>

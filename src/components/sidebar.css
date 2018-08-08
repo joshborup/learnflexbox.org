@@ -202,6 +202,8 @@
       align-items: flex-start !important; }
       .side-bar-container .child-input-container > div .for-margin label {
         flex: 1; }
+    .side-bar-container .child-input-container > div .order {
+      margin: 10px 0; }
     .side-bar-container .child-input-container > div .child-flex-options {
       display: flex;
       flex-direction: column; }
