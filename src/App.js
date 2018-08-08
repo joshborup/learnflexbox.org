@@ -7,8 +7,7 @@ import AlignItems from './components/AlignItems';
 import AlignContent from './components/AlignContent';
 import CssOutput from './components/CssOutput';
 import Child from './components/Child';
-import * as animationData from './heart_with_particles.json';
-import Lottie from 'react-lottie';
+import AlignSelf from './components/AlignSelf'
 import './App.css';
 
 class App extends Component {
@@ -77,7 +76,8 @@ class App extends Component {
           marginRight: this.state[`div-${div + 1}-margin-right`] ? this.state[`div-${div + 1}-margin-right`] + 'px' : 0,
           marginBottom: this.state[`div-${div + 1}-margin-bottom`] ? this.state[`div-${div + 1}-margin-bottom`] + 'px' : 0,
           marginLeft: this.state[`div-${div + 1}-margin-left`] ? this.state[`div-${div + 1}-margin-left`] + 'px' : 0,
-          flex: this.state[`div-${div + 1}`]
+          flex: this.state[`div-${div + 1}`],
+          alignSelf: this.state[`div-${div + 1}-align-self`]
         }
     
     }
@@ -116,6 +116,7 @@ class App extends Component {
           borderRadius: '2px',
           margin: '0px',
           flex: this.state['div-1'],
+          alignSelf: this.state[`div-1-align-self`],
           marginTop: this.state[`div-1-margin-top`] ? this.state[`div-1-margin-top`] + 'px' : 0,
           marginRight: this.state[`div-1-margin-right`] ? this.state[`div-1-margin-right`] + 'px' : 0,
           marginBottom: this.state[`div-1-margin-bottom`] ? this.state[`div-1-margin-bottom`] + 'px' : 0,
@@ -140,10 +141,17 @@ class App extends Component {
 
     let divInputs = this.state.childrenArray.map(div => {
          return <div key={div} className='child-container'>
-                  <h2>child {div + 1}</h2>
+                  <h2>Child {div + 1}</h2>
                   <div className='child-flex-options'>
                     <h3>Flex:</h3>
                     <div>Flex: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
+                  </div>
+
+                  <div className='child-flex-options'>
+                    {/* <h3>Align Self:</h3>
+                    <div>Align Self: <input type='text' placeholder='center etc..' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-align-self`} /> */}
+                    <AlignSelf changeHandler={this.inputChangeHandler} alignSelf={this.state[`div-${div + 1}-align-self`]} propName={`div-${div + 1}-align-self`} />
+                    {/* </div> */}
                   </div>
 
                   <div className='child-flex-options for-margin'>
@@ -176,19 +184,6 @@ class App extends Component {
           {div + 1}
           </div>
     })
-
-    const defaultOptions = {
-      loop: true,
-      autoplay: true, 
-      animationData: animationData,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-    };
-
-    const style = {
-      margin: 0
-    }
 
     return (
       <div className="Main">

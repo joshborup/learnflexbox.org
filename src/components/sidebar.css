@@ -170,6 +170,11 @@
     text-shadow: 0.5px 0.5px 1.5px #464632;
     padding: 10px 0px;
     width: 100%; }
+    .side-bar-container .flex-direction label {
+      display: flex;
+      align-items: center; }
+      .side-bar-container .flex-direction label input {
+        height: 20px; }
     .side-bar-container .flex-direction > details > summary {
       margin-bottom: 5px;
       width: 100%;
@@ -206,8 +211,7 @@
         width: 100%;
         text-align: center; }
       .side-bar-container .child-input-container > div .child-flex-options input {
-        flex: 1;
-        height: 30px;
+        height: 20px;
         border-radius: 3px;
         border: none;
         font-size: 16px;
@@ -215,6 +219,10 @@
         max-width: 100px; }
       .side-bar-container .child-input-container > div .child-flex-options input:focus {
         outline: none; }
+      .side-bar-container .child-input-container > div .child-flex-options label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
       .side-bar-container .child-input-container > div .child-flex-options .child-option-margin {
         display: flex;
         flex-direction: column;
