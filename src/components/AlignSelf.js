@@ -7,7 +7,7 @@ const AlignSelf = (props) => {
             <h3>Align Self</h3>
                 <div>
                 <label>
-                    <input type='radio' name='alignSelf' defaultChecked value='stretch' />
+                    <input type='radio' name='alignSelf' defaultChecked={true} value='stretch' />
                     Stretch (Default)</label>
                 </div>
                 <div>

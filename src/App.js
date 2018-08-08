@@ -72,6 +72,7 @@ class App extends Component {
           color: 'white',
           textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
           borderRadius: '2px',
+          order: this.state[`div-${div + 1}-order`],
           marginTop: this.state[`div-${div + 1}-margin-top`] ? this.state[`div-${div + 1}-margin-top`] + 'px' : 0,
           marginRight: this.state[`div-${div + 1}-margin-right`] ? this.state[`div-${div + 1}-margin-right`] + 'px' : 0,
           marginBottom: this.state[`div-${div + 1}-margin-bottom`] ? this.state[`div-${div + 1}-margin-bottom`] + 'px' : 0,
@@ -115,6 +116,7 @@ class App extends Component {
           textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
           borderRadius: '2px',
           margin: '0px',
+          order: this.state['div-1-order'],
           flex: this.state['div-1'],
           alignSelf: this.state[`div-1-align-self`],
           marginTop: this.state[`div-1-margin-top`] ? this.state[`div-1-margin-top`] + 'px' : 0,
@@ -148,10 +150,12 @@ class App extends Component {
                   </div>
 
                   <div className='child-flex-options'>
-                    {/* <h3>Align Self:</h3>
-                    <div>Align Self: <input type='text' placeholder='center etc..' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-align-self`} /> */}
+                    <h3>Order:</h3>
+                    <div>Order: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-order`} value={this.state[`div-${div + 1}-order`]}/></div>
+                  </div>
+
+                  <div className='child-flex-options'>
                     <AlignSelf changeHandler={this.inputChangeHandler} alignSelf={this.state[`div-${div + 1}-align-self`]} propName={`div-${div + 1}-align-self`} />
-                    {/* </div> */}
                   </div>
 
                   <div className='child-flex-options for-margin'>
