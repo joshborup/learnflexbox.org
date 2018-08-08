@@ -8,20 +8,24 @@ const FlexDirection = (props) => {
                     <p>Defines how flexbox items are ordered within a flexbox container.</p>
                 </details>
                 <div>
+                <label>
                     <input type='radio' name='flexDirection' defaultChecked value='row' />
-                    <label>Row (Default)</label>
+                    Row (Default)</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='flexDirection' value='row-reverse' />
-                    <label>Row-reverse</label>
+                    Row-reverse</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='flexDirection' value='column' />
-                    <label>Column</label>
+                    Column</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='flexDirection' value='column-reverse' />
-                    <label>Column-reverse</label>
+                    Column-reverse</label>
                 </div>
         </div>
     );

@@ -8,16 +8,19 @@ const FlexWrap = (props) => {
                     <p>Defines if flexbox items appear on a single line or on multiple lines within a flexbox container</p>
                 </details>
                 <div>
+                <label>
                     <input type='radio' name='flexWrap' defaultChecked value='nowrap' />
-                    <label>No Wrap (Default)</label>
+                    No Wrap (Default)</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='flexWrap' value='wrap' />
-                    <label>Wrap</label>
+                    Wrap</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='flexWrap' value='wrap-reverse' />
-                    <label>Wrap-reverse</label>
+                    Wrap-reverse</label>
                 </div>
         </div>
     );

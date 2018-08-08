@@ -8,32 +8,42 @@ const AlignContent = (props) => {
                     <p>Defines how each line is aligned within a flexbox container. It only applies if flex-wrap: wrap is present, and if there are multiple lines of flexbox items.</p>
                 </details>
                 <div>
-                    <input type='radio' name='alignContent' defaultChecked value='stretch' />
-                    <label>Stretch (Default)</label>
+                    
+                    <label>
+                        <input type='radio' name='alignContent' defaultChecked value='stretch' />
+                        Stretch (Default)
+                    </label>
                 </div>
                 <div>
-                    <input type='radio' name='alignContent' value='center' />
-                    <label>Center</label>
+                    <label>
+                        <input type='radio' name='alignContent' value='center' />
+                        Center
+                    </label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignContent' value='flex-start' />
-                    <label>Flex-start</label>
+                    Flex-start</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignContent' value='flex-end' />
-                    <label>Flex-end</label>
+                    Flex-end</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignContent' value='space-around' />
-                    <label>Space-around</label>
+                    Space-around</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignContent' value='space-between' />
-                    <label>Space-between</label>
+                    Space-between</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignContent' value='space-evenly' />
-                    <label>Space-evenly</label>
+                    Space-evenly</label>
                 </div>
         </div>
     );

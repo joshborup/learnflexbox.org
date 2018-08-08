@@ -8,28 +8,34 @@ const JustifyContent = (props) => {
                     <p>Defines how flexbox items are aligned according to the main axis, within a flexbox container.</p>
                 </details>
                 <div>
+                <label>
                     <input type='radio' name='justifyContent' defaultChecked value='flex-start' />
-                    <label>Flex-start (Default)</label>
+                    Flex-start (Default)</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='justifyContent' value='flex-end' />
-                    <label>Flex-end</label>
+                    Flex-end</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='justifyContent' value='center' />
-                    <label>Center</label>
+                    Center</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='justifyContent' value='space-around' />
-                    <label>Space-around</label>
+                    Space-around</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='justifyContent' value='space-between' />
-                    <label>Space-between</label>
+                    Space-between</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='justifyContent' value='space-evenly' />
-                    <label>Space-evenly</label>
+                   Space-evenly</label>
                 </div>
         </div>
     );

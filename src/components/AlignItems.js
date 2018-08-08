@@ -9,32 +9,39 @@ const AlignItems = (props) => {
                     <p>Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.</p>
                 </details>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' defaultChecked value='stretch' />
-                    <label>Stretch (Default)</label>
+                    Stretch (Default)</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' value='center' />
-                    <label>Center</label>
+                    Center</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' value='flex-start' />
-                    <label>Flex-start</label>
+                    Flex-start</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' value='flex-end' />
-                    <label>Flex-end</label>
+                    Flex-end</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' value='space-around' />
-                    <label>Space-around</label>
+                   Space-around</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' value='space-between' />
-                    <label>Space-between</label>
+                    Space-between</label>
                 </div>
                 <div>
+                <label>
                     <input type='radio' name='alignItems' value='space-evenly' />
-                    <label>Space-evenly</label>
+                    Space-evenly</label>
                 </div>
         </div>
     );
