@@ -61,8 +61,9 @@ class App extends Component {
   
      return {
           background: this.state.color,
-          padding:'30px',
           boxShadow: '1px 3px 10px rgba(21, 21, 21, .7)',
+          minWidth:this.state[`div-${div + 1}-flex-basis`] ? 0 : '90px',
+          minHeight:'90px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -72,6 +73,9 @@ class App extends Component {
           color: 'white',
           textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
           borderRadius: '2px',
+          flexGrow: this.state[`div-${div + 1}-flex-grow`],
+          flexShrink: this.state[`div-${div + 1}-flex-shrink`],
+          flexBasis: this.state[`div-${div + 1}-flex-basis`] ? this.state[`div-${div + 1}-flex-basis`] + 'px': '90px',
           order: this.state[`div-${div + 1}-order`],
           marginTop: this.state[`div-${div + 1}-margin-top`] ? this.state[`div-${div + 1}-margin-top`] + 'px' : 0,
           marginRight: this.state[`div-${div + 1}-margin-right`] ? this.state[`div-${div + 1}-margin-right`] + 'px' : 0,
@@ -105,10 +109,10 @@ class App extends Component {
       },
       child: {
           background: this.state.color,
-          minWidth:'100px',
-          minHeight:"100px",
           boxShadow: '1px 3px 10px rgba(21, 21, 21, .7)',
           display: 'flex',
+          minWidth:this.state[`div-1-flex-basis`] ? 0 : '90px',
+          minHeight:'90px',
           justifyContent: 'center',
           alignItems: 'center',
           fontSize: '80px',
@@ -116,6 +120,9 @@ class App extends Component {
           textShadow: '1.5px 1.5px 3px rgb(70,70,50)',
           borderRadius: '2px',
           margin: '0px',
+          flexGrow:this.state['div-1-flex-grow'],
+          flexShrink:this.state['div-1-flex-shrink'],
+          flexBasis: this.state[`div-1-flex-basis`] ?  this.state[`div-1-flex-basis`] + 'px' : '90px',
           order: this.state['div-1-order'],
           flex: this.state['div-1'],
           alignSelf: this.state[`div-1-align-self`],
@@ -144,15 +151,34 @@ class App extends Component {
     let divInputs = this.state.childrenArray.map(div => {
          return <div key={div} className='child-container'>
                   <h2>Child {div + 1}</h2>
-                  <div className='child-flex-options'>
-                    <h3>Flex:</h3>
-                    <div>Flex: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
-                  </div>
+                  <h3>Flex:</h3>
+                  <details>
+                    <summary>
+                      <div className='child-flex-options'>
+                        
+                        <div>Flex: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
+                      </div>
+                    </summary>
+
+                    <div className='child-flex-options order'>
+                      <div>Flex-Basis: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-basis`} value={this.state[`div-${div + 1}-flex-basis`]}/>{' px'}</div>
+                    </div>
+
+                    <div className='child-flex-options order'>
+                      <div>Flex-Grow: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-grow`} value={this.state[`div-${div + 1}-flex-grow`]}/></div>
+                    </div>
+
+                    <div className='child-flex-options order'>
+                      <div>Flex-Shrink: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-shrink`} value={this.state[`div-${div + 1}-flex-shrink`]}/></div>
+                    </div>
+                  </details>
 
                   <div className='child-flex-options order'>
                     <h3>Order:</h3>
                     <div>Order: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-order`} value={this.state[`div-${div + 1}-order`]}/></div>
                   </div>
+
+                  
 
                   <div className='child-flex-options'>
                     <AlignSelf changeHandler={this.inputChangeHandler} alignSelf={this.state[`div-${div + 1}-align-self`]} propName={`div-${div + 1}-align-self`} />
@@ -164,18 +190,22 @@ class App extends Component {
                       <div>
                         <label>Top: </label>
                         <input type='number' placeholder='Top' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-top`} value={this.state[`div-${div + 1}-margin-top`]}/>
+                        &nbsp;{' px'}
                       </div>
                       <div>
                         <label>Right: </label>
                       <input type='number' placeholder='right' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-right`} value={this.state[`div-${div + 1}-margin-right`]}/>
+                      &nbsp;{' px'}
                       </div>
                       <div>
-                        <label>Bottom: </label>
+                        <label>Bottom:&nbsp; </label>
                         <input type='number' placeholder='bottom' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-bottom`} value={this.state[`div-${div + 1}-margin-bottom`]}/>
+                        &nbsp;{' px'}
                       </div>
                       <div>
                         <label>Left: </label>
                       <input type='number' placeholder='left' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-margin-left`} value={this.state[`div-${div + 1}-margin-left`]}/>
+                      &nbsp;{' px'}
                       </div>
                     </div>
                   </div>

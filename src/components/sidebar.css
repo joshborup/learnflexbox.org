@@ -11,9 +11,18 @@
   flex-direction: column;
   align-items: flex-start;
   overflow: scroll; }
+  .side-bar-container h3 {
+    font-size: 20px;
+    text-align: center; }
   .side-bar-container details {
     margin-bottom: 5px;
     transition: .4s; }
+    .side-bar-container details summary {
+      display: flex;
+      align-items: center; }
+      .side-bar-container details summary .child-flex-options {
+        display: flex;
+        align-items: center; }
     .side-bar-container details p {
       background: #505050;
       padding: 10px;

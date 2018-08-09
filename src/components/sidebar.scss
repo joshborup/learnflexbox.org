@@ -13,9 +13,27 @@
     align-items: flex-start;
     overflow: scroll;
 
+    h3{
+        font-size: 20px;
+        text-align: center;
+    }
+
     details{
         margin-bottom: 5px;
         transition: .4s;
+        
+        summary {
+            display: flex;
+            align-items: center;
+
+            .child-flex-options {
+                display: flex;
+                    align-items: center;
+                div {
+                    
+                }
+            }
+        }
         p{
             background: rgb(80, 80, 80);
             padding: 10px;

@@ -7,9 +7,12 @@ const CssOutput = (props) => {
    
     let childCss = props.count ? props.count.map(div => {
         return `.child-${div+1} {
-            flex: ${+props['div-' + (+ div + 1)] || 0};
-            order: ${+props['div-' + (+ div + 1) + '-order'] || 0};
             align-self: ${props['div-' + (+ div + 1) + '-align-self'] || 'stretch'};
+            order: ${+props['div-' + (+ div + 1) + '-order'] || 0};
+            flex-basis: ${props['div-' + (+ div + 1) + '-flex-basis'] ? props['div-' + (+ div + 1) + '-flex-basis']  + ' px' : '90 px'};
+            flex-grow: ${props['div-' + (+ div + 1) + '-flex-grow'] || 0};
+            flex-shrink: ${props['div-' + (+ div + 1) + '-flex-shrink'] || 0};
+            flex: ${+props['div-' + (+ div + 1)] || 0};
         }
         `}).join('') : '';
     
