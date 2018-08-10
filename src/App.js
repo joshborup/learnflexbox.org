@@ -107,10 +107,6 @@ class App extends Component {
     let styles = {
       parent: {
         border: 'solid 5px #02173E',
-        width: '100%',
-        height: '500px',
-        maxWidth:'700px',
-        minWidth: '500px',
         margin: '0 auto',
         display: 'flex',
         borderRadius:'3px',
@@ -249,7 +245,7 @@ class App extends Component {
             
           </Sidebar>
           <div>
-            <div style={styles.parent}>
+            <div className='parent-container' style={styles.parent}>
             <h2 className='parent-classname'>Parent</h2>
               {this.state.flexChildren ? divArray : <div className='generated-div' style={styles.child}><div className='child-title'>child</div>1</div>}
             </div>
