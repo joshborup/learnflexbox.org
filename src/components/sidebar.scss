@@ -19,9 +19,16 @@
     }
 
     details{
-        margin-bottom: 5px;
+        margin: 10px 0;
         transition: .4s;
+        position: relative;
+        z-index: 1;
         
+        .raised-input {
+            position: absolute;
+            z-index: 2;
+        }
+
         summary {
             display: flex;
             align-items: center;
@@ -29,9 +36,7 @@
             .child-flex-options {
                 display: flex;
                     align-items: center;
-                div {
-                    
-                }
+                
             }
         }
         p{
@@ -268,6 +273,7 @@
             font-size: 20px;
             text-shadow: 1.5px 1.5px 2.5px rgb(70,70,50);
             
+            
         }
 
         
@@ -310,8 +316,9 @@
 
         .child-flex-options {
             display: flex;
-            
             flex-direction: column;
+
+            
 
             h3 {
                 margin: 0 5px 5px 0;

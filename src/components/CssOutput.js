@@ -9,10 +9,10 @@ const CssOutput = (props) => {
         return `.child-${div+1} {
             align-self: ${props['div-' + (+ div + 1) + '-align-self'] || 'stretch'};
             order: ${+props['div-' + (+ div + 1) + '-order'] || 0};
-            flex-basis: ${props['div-' + (+ div + 1) + '-flex-basis'] ? props['div-' + (+ div + 1) + '-flex-basis']  + ' px' : '90 px'};
+            flex: ${props['div-' + (+ div + 1)] || ((props[`div-${div + 1}-flex-grow`] || 0) + ' ' + (props[`div-${div + 1}-flex-shrink`] || 0) + ' ' + (props[`div-${div + 1}-flex-basis`] || 0) + 'px') || '0 0 90px'};
             flex-grow: ${props['div-' + (+ div + 1) + '-flex-grow'] || 0};
             flex-shrink: ${props['div-' + (+ div + 1) + '-flex-shrink'] || 0};
-            flex: ${+props['div-' + (+ div + 1)] || 0};
+            flex-basis: ${props['div-' + (+ div + 1) + '-flex-basis'] ? props['div-' + (+ div + 1) + '-flex-basis']  + 'px' : '90px'};
         }
         `}).join('') : '';
     

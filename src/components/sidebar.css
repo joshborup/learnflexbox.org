@@ -15,8 +15,13 @@
     font-size: 20px;
     text-align: center; }
   .side-bar-container details {
-    margin-bottom: 5px;
-    transition: .4s; }
+    margin: 10px 0;
+    transition: .4s;
+    position: relative;
+    z-index: 1; }
+    .side-bar-container details .raised-input {
+      position: absolute;
+      z-index: 2; }
     .side-bar-container details summary {
       display: flex;
       align-items: center; }

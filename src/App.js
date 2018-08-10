@@ -24,6 +24,7 @@ class App extends Component {
       alignContent:'stretch',
       childFlex: 0,
       toggle: false,
+      flexToggle: false
     }
   }
 
@@ -62,7 +63,7 @@ class App extends Component {
      return {
           background: this.state.color,
           boxShadow: '1px 3px 10px rgba(21, 21, 21, .7)',
-          minWidth:this.state[`div-${div + 1}-flex-basis`] ? 0 : '90px',
+          minWidth: this.state[`div-${div + 1}`] || this.state[`div-${div + 1}-flex-basis`] ? 0 : '90px',
           minHeight:'90px',
           display: 'flex',
           justifyContent: 'center',
@@ -85,6 +86,19 @@ class App extends Component {
           alignSelf: this.state[`div-${div + 1}-align-self`]
         }
     
+    }
+
+    toggleFlex = (key) => {
+      
+      this.setState((prevState) => {
+        return {
+          [`flexToggle-${key}`]: !prevState[`flexToggle-${key}`],
+          [`div-${key + 1}-flex-basis`]: '',
+          [`div-${key + 1}-flex-shrink`]: '',
+          [`div-${key + 1}-flex-grow`]: '',
+          [`div-${key + 1}`]:''
+        }
+      })
     }
   
 
@@ -111,7 +125,7 @@ class App extends Component {
           background: this.state.color,
           boxShadow: '1px 3px 10px rgba(21, 21, 21, .7)',
           display: 'flex',
-          minWidth:this.state[`div-1-flex-basis`] ? 0 : '90px',
+          minWidth: this.state['div-1'] || this.state[`div-1-flex-basis`] ? 0 : '90px',
           minHeight:'90px',
           justifyContent: 'center',
           alignItems: 'center',
@@ -152,17 +166,14 @@ class App extends Component {
          return <div key={div} className='child-container'>
                   <h2>Child {div + 1}</h2>
                   <h3>Flex:</h3>
-                  <details>
-                    <summary>
-                      <div className='child-flex-options'>
+                  <div className='child-flex-options'>
                         
-                        <div>Flex: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
+                        <div>Flex (short-hand): <input className='raised-input' disabled={this.state[`flexToggle-${div}`]} placeholder={((this.state[`div-${div + 1}-flex-grow`] || 0) + ' ' + (this.state[`div-${div + 1}-flex-shrink`] || 0) + ' ' + (this.state[`div-${div + 1}-flex-basis`] || 0) + 'px')} onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}`} value={this.state[`div-${div + 1}`]}/></div>
                       </div>
+                  <details>
+                    <summary onClick={() => this.toggleFlex(div)}>
+                      More flex options
                     </summary>
-
-                    <div className='child-flex-options order'>
-                      <div>Flex-Basis: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-basis`} value={this.state[`div-${div + 1}-flex-basis`]}/>{' px'}</div>
-                    </div>
 
                     <div className='child-flex-options order'>
                       <div>Flex-Grow: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-grow`} value={this.state[`div-${div + 1}-flex-grow`]}/></div>
@@ -171,7 +182,13 @@ class App extends Component {
                     <div className='child-flex-options order'>
                       <div>Flex-Shrink: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-shrink`} value={this.state[`div-${div + 1}-flex-shrink`]}/></div>
                     </div>
+
+                    <div className='child-flex-options order'>
+                      <div>Flex-Basis: <input type='number' placeholder='example: 1' onChange={(e)=>this.inputChangeHandler(e.target.name, e.target.value)} key={div + 1} name={`div-${div + 1}-flex-basis`} value={this.state[`div-${div + 1}-flex-basis`]}/>{' px'}</div>
+                    </div>
                   </details>
+
+                  
 
                   <div className='child-flex-options order'>
                     <h3>Order:</h3>
